@@ -59,7 +59,7 @@ form textarea {
 .user p,
 .bot p {
   font-size: 17px;
-  color: #464646;
+  color: #1b1b1b;
   line-height: 1.6;
   width: 90%;
 }
@@ -88,7 +88,7 @@ button {
 
 form p {
   font-size: 13px;
-  color: #747474;
+  color: #555555;
   overflow: visible;
 }
 
