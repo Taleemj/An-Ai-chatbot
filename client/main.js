@@ -57,7 +57,7 @@ const handleSubmit = async (e) => {
   const newMessage = document.getElementById(uniqueId);
   form.reset();
   loader(newMessage);
-  const response = await fetch("http://localhost:5000", {
+  const response = await fetch("https://chatpgtclone.onrender.com/", {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -78,10 +78,6 @@ const handleSubmit = async (e) => {
     newMessage.innerHTML = "Something went wrong";
     alert(err);
   }
-  // chats.scrollTop = chats.scrollHeight + 400;
-  // console.log(chats.scrollHeight);
-
-  console.log(chats.scrollHeight);
 };
 
 form.addEventListener("submit", handleSubmit);
