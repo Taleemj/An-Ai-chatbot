@@ -4,6 +4,12 @@ import person from "./assets/user.svg";
 const form = document.querySelector("form");
 const chats = document.querySelector("#chats");
 
+setTimeout(() => {
+  alert(
+    "PS: AI known to be slow sometimes, but it will answer........... eventually.........hopefully"
+  );
+}, 5000);
+
 let loading;
 
 function loader(element) {
