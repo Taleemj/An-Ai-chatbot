@@ -12,28 +12,32 @@ dotenv.config();
 const port = 5000;
 
 app.get("/", async (req, res) => {
-  res.send({ message: "hello from chatGpt" });
+  res.send({ message: "Hello from chatGpt by Taleem" });
 });
 
 app.post("/", async (req, res) => {
   try {
     const message = req.body.message;
-
     const options = {
       method: "POST",
-      url: "https://chatgpt-gpt-3-5.p.rapidapi.com/ask",
+      url: "https://chatgpt53.p.rapidapi.com/",
       headers: {
         "content-type": "application/json",
         "X-RapidAPI-Key": process.env.VITE_RAPIDAPI_API_KEY,
-        "X-RapidAPI-Host": "chatgpt-gpt-3-5.p.rapidapi.com",
+        "X-RapidAPI-Host": "chatgpt53.p.rapidapi.com",
       },
       data: {
-        query: `${message}`,
+        messages: [
+          {
+            role: "user",
+            content: `${message}`,
+          },
+        ],
       },
     };
 
     const response = await axios.request(options);
-    res.status(200).send({ ai: response.data });
+    res.status(200).send({ ai: response.data.choices[0].message.content });
   } catch (error) {
     console.error(error);
     res.send(error);

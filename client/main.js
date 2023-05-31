@@ -77,7 +77,7 @@ const handleSubmit = async (e) => {
 
   if (response.ok) {
     const data = await response.json();
-    const parsedData = data.ai.response.trim();
+    const parsedData = data.ai.trim();
     typeText(newMessage, parsedData);
   } else {
     const err = await response.text();
