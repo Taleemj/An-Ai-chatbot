@@ -18,15 +18,33 @@ app.get("/", async (req, res) => {
 app.post("/", async (req, res) => {
   try {
     const message = req.body.message;
+    // const options = {
+    //   method: "POST",
+    //   url: "https://chatgpt53.p.rapidapi.com/",
+    //   headers: {
+    //     "content-type": "application/json",
+    //     "X-RapidAPI-Key": process.env.VITE_RAPIDAPI_API_KEY,
+    //     "X-RapidAPI-Host": "chatgpt53.p.rapidapi.com",
+    //   },
+    //   data: {
+    //     messages: [
+    //       {
+    //         role: "user",
+    //         content: `${message}`,
+    //       },
+    //     ],
+    //   },
+    // };
     const options = {
       method: "POST",
-      url: "https://chatgpt53.p.rapidapi.com/",
+      url: "https://openai80.p.rapidapi.com/chat/completions",
       headers: {
         "content-type": "application/json",
         "X-RapidAPI-Key": process.env.VITE_RAPIDAPI_API_KEY,
-        "X-RapidAPI-Host": "chatgpt53.p.rapidapi.com",
+        "X-RapidAPI-Host": "openai80.p.rapidapi.com",
       },
       data: {
+        model: "gpt-3.5-turbo",
         messages: [
           {
             role: "user",
@@ -37,6 +55,7 @@ app.post("/", async (req, res) => {
     };
 
     const response = await axios.request(options);
+    console.log(response.data);
     res.status(200).send({ ai: response.data.choices[0].message.content });
   } catch (error) {
     console.error(error);
