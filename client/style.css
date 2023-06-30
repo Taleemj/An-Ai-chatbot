@@ -61,6 +61,7 @@ form textarea {
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
+  white-space: pre-wrap;
 }
 .user p,
 .bot p {
