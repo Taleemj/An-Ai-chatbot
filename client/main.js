@@ -39,8 +39,10 @@ function typeText(element, text) {
 function chatPattern(isAi, value, Id) {
   return `
     <div class="${isAi ? "bot" : "user"}">
+          ${isAi ? "<pre>" : ""}
           <img src="${isAi ? gpt : person}" alt="${isAi ? "bot" : "user"}" />
           <p id="${Id}">${value}</p>
+          ${isAi ? "</pre>" : ""}
         </div>
     `;
 }
