@@ -6,9 +6,9 @@ const chats = document.querySelector("#chats");
 
 setTimeout(() => {
   alert(
-    "PS: AI known to be slow sometimes, but it will answer........... eventually.........hopefully"
+    "hi unfortunately Cooler chatgpt doesnot function anymore due to api owner changing it to a paid api only. i guess you can go use chatgpt instead."
   );
-}, 5000);
+}, 3000);
 
 let loading;
 
