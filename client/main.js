@@ -4,12 +4,6 @@ import person from "./assets/user.svg";
 const form = document.querySelector("form");
 const chats = document.querySelector("#chats");
 
-setTimeout(() => {
-  alert(
-    "hi unfortunately Cooler chatgpt doesnot function anymore due to api owner changing it to a paid api only. i guess you can go use chatgpt instead."
-  );
-}, 3000);
-
 let loading;
 
 function loader(element) {
@@ -79,7 +73,7 @@ const handleSubmit = async (e) => {
 
   if (response.ok) {
     const data = await response.json();
-    const parsedData = data.ai.trim();
+    const parsedData = data.ai.text.trim();
     typeText(newMessage, parsedData);
   } else {
     const err = await response.text();
