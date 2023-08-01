@@ -20,20 +20,18 @@ app.post("/", async (req, res) => {
     const message = req.body.message;
     const options = {
       method: "POST",
-      url: "https://chatgpt53.p.rapidapi.com/",
+      url: "https://chatgpt-api8.p.rapidapi.com/",
       headers: {
         "content-type": "application/json",
         "X-RapidAPI-Key": process.env.VITE_RAPIDAPI_API_KEY,
-        "X-RapidAPI-Host": "chatgpt53.p.rapidapi.com",
+        "X-RapidAPI-Host": "chatgpt-api8.p.rapidapi.com",
       },
-      data: {
-        messages: [
-          {
-            role: "user",
-            content: `${message}`,
-          },
-        ],
-      },
+      data: [
+        {
+          content: `${message}`,
+          role: "user",
+        },
+      ],
     };
 
     const response = await axios.request(options);
