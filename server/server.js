@@ -35,7 +35,7 @@ app.post("/", async (req, res) => {
     };
 
     const response = await axios.request(options);
-    res.status(200).send({ ai: response.data.choices[0].message.content });
+    res.status(200).send({ ai: response.data });
   } catch (error) {
     console.error(error);
     res.send(error);
